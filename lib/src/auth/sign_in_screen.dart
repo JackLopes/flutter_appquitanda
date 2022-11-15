@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 import 'component/custom_text_field.dart';
 
@@ -12,8 +13,60 @@ class SignInScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              decoration: BoxDecoration(color: Colors.green),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //Titulo do app, Tecnica para customizar frase
+               const Text.rich(
+                    TextSpan(
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'Green',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              )
+                        ),
+                        TextSpan(
+                            text: 'grocer',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                            )
+                        ),
+                      ]
+
+                    )
+
+                ),
+              //Utilizado para predeterminar uma altura
+                SizedBox(
+                  height: 30,
+                  //Widget utilizado para formatar o array de textos
+                  child: DefaultTextStyle(
+                    style: const TextStyle( fontSize: 25),
+
+                   // Pacote instalado para animar texto
+                    child: AnimatedTextKit(
+                        pause: Duration.zero,
+                        repeatForever:true,
+                        animatedTexts: [
+
+                      FadeAnimatedText('Frutas'),
+                      FadeAnimatedText('Verduras'),
+                      FadeAnimatedText('Legumes'),
+                      FadeAnimatedText('Carnes'),
+                      FadeAnimatedText('Cereais'),
+                      FadeAnimatedText('Laticínios'),
+                    ]),
+                  ),
+                ),
+
+              ],
+
             ),
           ),
           Container(
