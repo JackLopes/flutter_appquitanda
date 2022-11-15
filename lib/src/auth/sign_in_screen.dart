@@ -1,3 +1,4 @@
+import 'package:appquitanda/src/config/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -9,7 +10,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: CustomColors.customSwatchColor,
       body: Column(
         children: [
           Expanded(
@@ -17,13 +18,13 @@ class SignInScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //Titulo do app, Tecnica para customizar frase
-               const Text.rich(
+                Text.rich(
                     TextSpan(
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 40,
                       ),
                       children: [
-                        TextSpan(
+                        const TextSpan(
                           text: 'Green',
                               style: TextStyle(
                                 color: Colors.white,
@@ -33,7 +34,7 @@ class SignInScreen extends StatelessWidget {
                         TextSpan(
                             text: 'grocer',
                             style: TextStyle(
-                              color: Colors.red,
+                              color: CustomColors.customConstrastColor,
                               fontWeight: FontWeight.bold,
                             )
                         ),
@@ -81,8 +82,8 @@ class SignInScreen extends StatelessWidget {
               // Strech, estica os filhos no tamanho da coluna
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                CustomTexField(icone: Icons.email, label: 'Email'),
-                CustomTexField(
+                const CustomTexField(icone: Icons.email, label: 'Email'),
+                const CustomTexField(
                     icone: Icons.password, label: 'Senha', isSecret: true),
                 //SizedBox Customizar um botão
                 SizedBox(
@@ -105,9 +106,9 @@ class SignInScreen extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {},
-                    child: const Text(
+                    child:  Text(
                       'Esqueceu a senha?',
-                      style: TextStyle(fontSize: 10, color: Colors.red),
+                      style: TextStyle(fontSize: 10, color: CustomColors.customConstrastColor),
                     ),
                   ),
                 ),
