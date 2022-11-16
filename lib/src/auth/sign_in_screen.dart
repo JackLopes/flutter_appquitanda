@@ -153,6 +153,7 @@ class SignInScreen extends StatelessWidget {
                              //Botão só para bordas
                       child: OutlinedButton(
                         style: OutlinedButton.styleFrom(
+
                           //customizar bordar
                           side: const BorderSide(
                             width: 2,
