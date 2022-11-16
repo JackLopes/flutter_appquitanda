@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTexField extends StatefulWidget {
   final IconData icone;
   final String label;
   final isSecret;
+  final List<TextInputFormatter>? inputFormatters;
   //variavel que controla o password como true-> visivel e false->invisivel, alternado pelo setState no butão
 
   const CustomTexField({
@@ -12,6 +14,7 @@ class CustomTexField extends StatefulWidget {
     required this.label,
     //Variavel que controla a visualização do suffixIcon, true-> visivel, false ->invisivel
     this.isSecret = false,
+    this.inputFormatters,
   }) : super(key: key);
 
   @override
@@ -32,6 +35,7 @@ class _CustomTexFieldState extends State<CustomTexField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
       child: TextFormField(
+        inputFormatters: widget.inputFormatters,
         //Utilizado em password
         obscureText: isObscure,
         decoration: InputDecoration(
